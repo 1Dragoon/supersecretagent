@@ -1,0 +1,24 @@
+[package]
+name = "stuff"
+version = "0.0.1"
+edition = "2021"
+
+[dependencies]
+oxidant = { path = "agent" }
+tokio = {version = "1.21.0", features = ["rt-multi-thread", "net", "macros", "sync", "io-util", "time"]}
+anyhow = "1.0.66"
+sshcerts = {path = "sshcerts/", features = ["all"]}
+async-trait = "0.1.58"
+
+[dependencies.windows]
+windows = "0.43.0"
+features = [
+    "Win32_Foundation",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_System_LibraryLoader",
+    "Win32_Graphics_Gdi",
+    "Win32_Security",
+    "Win32_System_DataExchange",
+    "Win32_System_Memory",
+    "Win32_System_Threading",
+]
